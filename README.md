@@ -1,7 +1,7 @@
 # QC filterer
 
 ## Description
-Reads provided csv file and alerts if any species of specific origin fails to pass 90% threshold of accepted sequencing runs.
+Reads provided csv file and alerts if any samples of specific origin fails to pass 90% threshold of accepted sequencing runs.
 
 ## Usage
 ```shell
