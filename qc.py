@@ -6,9 +6,11 @@ def read_file(filename, **readKwargs):
     #reads file
     try:
         return pd.read_csv(filename, **readKwargs)
-    except Exception as e:
+    except FileNotFoundError as e:
         print(e)
         raise Exception
+    else:
+        print('unexpected error')
       
     
 def transform_df(df, originLen):
