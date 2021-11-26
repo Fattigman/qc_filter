@@ -13,9 +13,9 @@ def read_file(filename, **readKwargs):
         print('unexpected error')
       
     
-def transform_df(df, originLen):
+def transform_df(df):
     try:
-        origins = [x[1:1+originLen] for x in df['sample']]
+        origins = [x.split('-')[0][1:] for x in df['sample']]
         df['origin'] = origins
         return df
     except FileNotFoundError as e:
@@ -41,11 +41,11 @@ def q_c(df):
         print('The csv file is probably wrongly formatted!')
         raise Exception()
 
-def main(fName = 'samples.txt', originLen = 1, **readKwargs):
+def main(fName = 'samples.txt', **readKwargs):
     try:
         nl = '\n'    
         df = read_file(fName, **readKwargs)
-        df = transform_df(df, originLen)
+        df = transform_df(df)
         ans = (q_c(df))
         if len(ans) > 0:
             print(f"Following origins did not pass the qc:{nl}{nl.join([f'{origin} with a fraction of {int(ans[origin]*100)}%' for origin in ans])} ")
