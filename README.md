@@ -5,7 +5,7 @@ Reads provided csv file and alerts if any samples of specific origin fails to pa
 
 ## Usage
 ```shell
-python qc.py filename origin_length
+python qc.py filename
 ```
 The two arguments are filename: self explanatory,  and origin_length: length of the origin names used in the samples.
 
