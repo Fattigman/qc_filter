@@ -8,9 +8,10 @@ def read_file(filename, **readKwargs):
         return pd.read_csv(filename, **readKwargs)
     except FileNotFoundError as e:
         print(e)
-        raise Exception
+        raise Exception()
     else:
         print('unexpected error')
+        raise Exception()
       
     
 def transform_df(df):
@@ -23,6 +24,7 @@ def transform_df(df):
         raise Exception()
     else:
         print('unexpected error')
+        raise Exception()
         
         
 def q_c(df):
@@ -39,6 +41,8 @@ def q_c(df):
     
     except KeyError as e:
         print(f'Could not find Key in csv file: {e}. Make sure it is included')
+        raise Exception()
+    else:
         raise Exception()
 
 def main(fName = 'samples.txt', **readKwargs):
