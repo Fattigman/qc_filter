@@ -52,7 +52,7 @@ def main(fName = 'samples.txt', **readKwargs):
         df = transform_df(df)
         ans = (q_c(df))
         if len(ans) > 0:
-            print(f"Following origins did not pass the qc:{nl}{nl.join([f'{origin} with a fraction of {int(ans[origin]*100)}%' for origin in ans])} ")
+            print(f"Following origins did not pass the qc:{nl}{nl.join([f'{origin} with a fraction of {int(ans[origin]*100)}% that passed qc' for origin in ans])} ")
         else:
             print('All origins passed the qc')
     except:
