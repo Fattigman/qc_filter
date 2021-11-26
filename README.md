@@ -7,7 +7,7 @@ Reads provided csv file and alerts if any samples of specific origin fails to pa
 ```shell
 python qc.py filename
 ```
-The two arguments are filename: self explanatory,  and origin_length: length of the origin names used in the samples.
+Run the qc.py script and provide file name, if no file name is provided samples.txt will be used.
 
 
 ## Assumptions
