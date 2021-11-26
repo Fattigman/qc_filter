@@ -18,9 +18,9 @@ def transform_df(df):
         origins = [x.split('-')[0][1:] for x in df['sample']]
         df['origin'] = origins
         return df
-    except FileNotFoundError as e:
-        print(e)
-        raise Exception("I know python!")
+    except KeyError as e:
+        print(f'Could not find Key in csv file: {e}. Make sure it is included')
+        raise Exception()
     else:
         print('unexpected error')
         
@@ -38,7 +38,7 @@ def q_c(df):
         return ans
     
     except KeyError as e:
-        print('The csv file is probably wrongly formatted!')
+        print(f'Could not find Key in csv file: {e}. Make sure it is included')
         raise Exception()
 
 def main(fName = 'samples.txt', **readKwargs):
